@@ -408,6 +408,7 @@ div#img {
   margin-bottom: 20px;
 }
 #week_forecast .day_forecast {
+  box-shadow: 1px 10px 20px -23px;
   width: 85px;
   display: flex;
   flex-direction: column;

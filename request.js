@@ -200,6 +200,7 @@ const renderCentent = (data) => {
   gsap.from(".card", {
     duration: 1,
     opacity: 0,
+    delay:2,
     y: 20,
     ease: "power3.out",
     stagger: 0.2,
@@ -260,8 +261,8 @@ const renderWeedForecast = (data) => {
               <img src="${icon}" alt="" />
             </div>
             <div class="min_max">
-              <span class="max">${maxtemp_c}</span>
-              <span class="min">${mintemp_c}</span>
+              <span class="max">${maxtemp_c}°C</span>
+              <span class="min">${mintemp_c}°C</span>
             </div>
           </div>
       `;
