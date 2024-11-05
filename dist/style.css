@@ -1,0 +1,432 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+  display: block;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #d6d7da;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.container {
+  box-sizing: border-box;
+  background-color: #f6f6f8;
+  border-radius: 20px;
+  height: 90%;
+  width: 70%;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0px 47px -33px;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+select {
+  padding: 10px;
+  border: none;
+  background-color: white;
+  width: 100%;
+  outline: none;
+}
+
+.left_side {
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 0 0 20px;
+  max-height: 100%;
+}
+.left_side .weather_info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  height: 100%;
+}
+
+.img__and__temp {
+  display: flex;
+}
+
+div#img {
+  width: 70%;
+  height: 60px;
+  margin: auto;
+  text-align: center;
+}
+
+#weather_image {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#temp {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+#day_and_time #today {
+  font-size: 15px;
+  font-weight: 600;
+}
+#day_and_time #today::after {
+  content: ",";
+}
+#day_and_time #today_time {
+  opacity: 0.4;
+  margin-left: 3px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #f6f6f8;
+  margin-block: 20px;
+}
+
+.condition {
+  flex: 1;
+}
+
+.condition > div {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.condition > div img {
+  width: 40px;
+  margin-right: 10px;
+}
+.condition > div #condition {
+  opacity: 0.6;
+}
+.condition > div:last-child div {
+  width: 40px;
+  margin-right: 10px;
+}
+.condition > div:last-child div img {
+  padding: 7px;
+}
+.condition > div:last-child #rain_mm {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.image_and_name_of_city {
+  width: 95%;
+  height: 150px;
+  border-radius: 20px;
+  position: relative;
+}
+.image_and_name_of_city .image_city {
+  height: 100%;
+}
+.image_and_name_of_city .image_city img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  border-radius: 20px;
+}
+.image_and_name_of_city .image_city::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  border-radius: 20px;
+}
+.image_and_name_of_city #coutry_and_city {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+  text-wrap: nowrap;
+}
+
+/* Styles for the right-side container */
+.right_side {
+  padding: 20px; /* Adds padding around the right-side content */
+  flex: 1; /* Allows this container to grow and take available space */
+  /* Styles for the top section within the right side */
+}
+.right_side .top {
+  display: flex; /* Enables horizontal layout */
+  justify-content: space-between; /* Space between elements */
+  margin-bottom: 30px; /* Adds space below this section */
+  /* Styles for the 'today or week' selection within the top section */
+  /* Styles for the button group within the top section */
+}
+.right_side .top .today_or_week {
+  display: flex; /* Horizontal layout for 'today' and 'week' options */
+  gap: 15px; /* Space between items */
+  /* Styles for the active selection */
+}
+.right_side .top .today_or_week span {
+  opacity: 0.5; /* Slightly transparent text */
+  font-weight: 400; /* Normal font weight */
+  font-size: 14px; /* Font size for text */
+}
+.right_side .top .today_or_week .active {
+  font-weight: 500; /* Slightly bolder font */
+  opacity: 1; /* Full opacity */
+  border-bottom: 1px solid black !important; /* Bottom border for active item */
+}
+.right_side .top .buttons {
+  display: flex; /* Horizontal layout for buttons */
+  gap: 10px; /* Space between buttons */
+  /* Styles for the active button */
+}
+.right_side .top .buttons button {
+  background-color: white; /* White button background */
+  border: none; /* No border */
+  outline: none; /* No outline */
+  width: 30px; /* Button width */
+  height: 30px; /* Button height */
+  border-radius: 50%; /* Makes button circular */
+}
+.right_side .top .buttons .active {
+  background-color: black; /* Black background for active button */
+  color: white; /* White text on active button */
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5); /* Adds shadow effect */
+}
+
+/* Highlights section styling */
+.hight_lights {
+  position: relative; /* Positions relative to its normal position */
+  overflow: auto; /* Enables scrolling if content overflows */
+  height: 100%; /* Takes full height of its container */
+}
+.hight_lights h3 {
+  font-weight: 400; /* Normal weight for heading */
+  font-size: 16px; /* Font size for heading */
+}
+
+/* Container for cards */
+.cards {
+  display: flex; /* Flex layout for cards */
+  -moz-column-gap: 20px;
+       column-gap: 20px; /* Space between columns */
+  flex-wrap: wrap; /* Wraps items to the next line */
+  justify-content: flex-start; /* Aligns cards to the start */
+  margin: auto;
+  padding: 4px;
+}
+
+/* Individual card styling */
+.card {
+  box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.5);
+  flex: 1 0 200px; /* Flex-grow: 1, flex-shrink: 0, flex-basis: 200px */
+  background-color: white; /* White background for cards */
+  padding: 24px; /* Padding inside each card */
+  margin-top: 25px; /* Space above each card */
+  border-radius: 15px; /* Rounds corners of each card */
+  display: flex; /* Flex layout for items within the card */
+  flex-direction: column; /* Stacks items vertically */
+  gap: 20px; /* Space between items */
+  min-height: 150px; /* Minimum height for each card */
+  /* Status text within each card */
+  /* First 'sun_condition' styling inside card */
+}
+.card h6 {
+  opacity: 0.6; /* Slightly transparent text */
+  font-weight: 300; /* Light font weight */
+  font-size: 14px; /* Font size for heading */
+}
+.card div {
+  /* Span styling within divs inside cards */
+}
+.card div span {
+  font-size: 35px; /* Large font size */
+  font-weight: 500; /* Semi-bold font weight */
+  /* Smaller font size and lighter weight for elements with 'small' class */
+}
+.card div span.small {
+  font-size: 16px;
+  font-weight: 300;
+}
+.card .status {
+  font-weight: 600; /* Bold font weight */
+  font-size: 14px; /* Font size */
+}
+.card .sun_condition:first-child {
+  margin-bottom: 10px; /* Space below the first sun condition */
+}
+
+/* Sun condition styling */
+.sun_condition {
+  align-items: center; /* Centers items vertically */
+  display: flex; /* Flex layout */
+  /* Icon styling within sun condition */
+  /* Last child styling */
+  /* Sun time text styling */
+}
+.sun_condition .icon {
+  display: flex;
+  align-items: center; /* Centers icon vertically */
+}
+.sun_condition:last-child {
+  display: flex;
+  align-items: center; /* Centers last sun condition vertically */
+}
+.sun_condition .sun_time {
+  font-size: 16px; /* Font size for sun time */
+  margin-left: 10px; /* Adds space to the left */
+}
+
+/* Custom scrollbar styling for highlights section */
+.hight_lights {
+  -ms-overflow-style: none; /* Disables scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
+
+/* Responsive card styling for wider screens */
+@media (min-width: 846px) {
+  .card {
+    max-width: 250px; /* Sets a maximum width for each card */
+  }
+}
+@media (max-width: 1083px) {
+  .cards {
+    justify-content: center;
+  }
+}
+.skeleton_container {
+  box-sizing: border-box;
+  background-color: #f6f6f8;
+  border-radius: 20px;
+  height: 90%;
+  width: 70%;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0px 47px -33px;
+  position: relative;
+}
+
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.skeleton-select {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 15px;
+}
+
+.skeleton-temp {
+  width: 70px;
+  height: 60px;
+}
+
+.skeleton-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.skeleton-text {
+  width: 80px;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.skeleton-condition {
+  width: 60px;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.skeleton-city-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.skeleton-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  width: 100%;
+  height: 120px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+#week_forecast {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+#week_forecast .day_forecast {
+  width: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding-block: 6px;
+  padding-inline: 10px;
+  gap: 5px;
+  font-size: 14px;
+  flex: 1 0 85px;
+}
+#week_forecast .day_forecast > span {
+  text-wrap: nowrap;
+}
+#week_forecast .day_forecast img {
+  width: 35px;
+}
+#week_forecast .day_forecast .min_max .min {
+  opacity: 0.4;
+  font-size: 13px;
+}

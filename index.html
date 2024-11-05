@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left_side">
+        <div>
+          <select name="city" id="city">
+            <option value="" selected disabled>Select Your City</option>
+            <option value="30.427755,-9.598107">Agadir</option>
+            <option value="34.020882,-6.841650">Rabat</option>
+            <option value="33.589886,-7.603869">Casablanca</option>
+            <option value="31.628674,-7.992047">Marrakesh</option>
+            <option value="35.168430,-5.275784">Chefchaouen</option>
+            <option value="34.689404,-1.912823">Oujda</option>
+            <option value="31.506327,-9.754354">Essaouira</option>
+            <option value="29.696901,-9.733198">Tiznit</option>
+            <option value="33.351177,-7.577820">Berrechid</option>
+            <option value="31.520464,-5.530234">Tinghir</option>
+          </select>
+        </div>
+        <div class="weather_info">
+          <div class="img__and__temp">
+            <h2 id="temp">0°C</h2>
+            <div id="img">
+              <img src="" alt="" class="weather_image" />
+            </div>
+          </div>
+          <div class="wrapper">
+            <div id="day_and_time">
+              <span id="today">monday</span>
+              <span id="today_time">3:09</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="condition">
+              <div>
+                <div>
+                  <img src="" alt="" class="weather_image" />
+                </div>
+                <span id="condition">text</span>
+              </div>
+              <div>
+                <div>
+                  <img
+                    src="/img/Capture d’écran 2024-11-05 031443.png"
+                    alt=""
+                  />
+                </div>
+                <span id="rain_mm">precip_mm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image_and_name_of_city">
+          <div class="image_city">
+            <img
+              src="https://preview.redd.it/x-plane-12-default-weather-engine-keeps-improving-live-v0-dtwaydo0tdka1.png?width=640&crop=smart&auto=webp&s=aeded245f5690c21138c0249d54b51177844c323"
+              alt=""
+              id="city_image"
+            />
+          </div>
+          <div id="coutry_and_city">country,name</div>
+        </div>
+      </div>
+
+      <div class="right_side">
+        <div class="top">
+          <div class="today_or_week">
+            <span>Today</span>
+            <span class="active">Week</span>
+          </div>
+          <div class="buttons">
+            <button data-value="°C" class="active">°C</button>
+            <button data-value="°F">°F</button>
+          </div>
+        </div>
+        <div id="week_forecast">
+          <span>Select Your City</span>
+        </div>
+        <div class="hight_lights">
+          <h3>Today's Hightlights</h3>
+          <div class="cards">
+            <div class="card">
+              <h6>Wind Status</h6>
+              <div>
+                <span class="wind_speed">wind</span>
+                <span class="small">km/h</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h6>Sunrise & Sunset</h6>
+              <div>
+                <div class="sun_condition">
+                  <div class="icon">
+                    <img
+                      src="/img/Capture d’écran 2024-11-05 045639.png"
+                      alt=""
+                      width="40px"
+                    />
+                  </div>
+                  <span class="sun_time">sunrise </span>
+                </div>
+                <div class="sun_condition">
+                  <div class="icon">
+                    <img
+                      src="/img/Capture d’écran 2024-11-05 045716.png"
+                      alt=""
+                      width="40px"
+                    />
+                  </div>
+                  <span class="sun_time">sunset </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h6>Air Quality</h6>
+              <div>
+                <span class="wind_speed">airQuality</span>
+              </div>
+              <span class="status">airQualiyDescripe </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container hidden" id="skeleton_container">
+      <div class="left_side">
+        <div class="skeleton skeleton-select"></div>
+
+        <div class="img__and__temp">
+          <div class="skeleton skeleton-temp"></div>
+          <div class="skeleton skeleton-image"></div>
+        </div>
+
+        <div id="day_and_time">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="condition">
+          <div class="skeleton skeleton-condition"></div>
+          <div class="skeleton skeleton-condition"></div>
+        </div>
+
+        <div class="city_image_container">
+          <div class="skeleton skeleton-city-image"></div>
+        </div>
+      </div>
+
+      <div class="right_side">
+        <div class="top">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-button"></div>
+        </div>
+        <div class="hight_lights">
+          <h3>Today's Highlights</h3>
+          <div class="cards">
+            <div class="card skeleton skeleton-card"></div>
+            <div class="card skeleton skeleton-card"></div>
+            <div class="card skeleton skeleton-card"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="main.js"></script>
+  <script src="request.js"></script>
+</html>

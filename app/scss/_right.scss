@@ -1,0 +1,163 @@
+/* Styles for the right-side container */
+.right_side {
+    padding: 20px; /* Adds padding around the right-side content */
+    flex: 1; /* Allows this container to grow and take available space */
+  
+    /* Styles for the top section within the right side */
+    .top {
+      display: flex; /* Enables horizontal layout */
+      justify-content: space-between; /* Space between elements */
+      margin-bottom: 30px; /* Adds space below this section */
+  
+      /* Styles for the 'today or week' selection within the top section */
+      .today_or_week {
+        display: flex; /* Horizontal layout for 'today' and 'week' options */
+        gap: 15px; /* Space between items */
+  
+        span {
+          opacity: 0.5; /* Slightly transparent text */
+          font-weight: 400; /* Normal font weight */
+          font-size: 14px; /* Font size for text */
+        }
+  
+        /* Styles for the active selection */
+        .active {
+          font-weight: 500; /* Slightly bolder font */
+          opacity: 1; /* Full opacity */
+          border-bottom: 1px solid black !important; /* Bottom border for active item */
+        }
+      }
+  
+      /* Styles for the button group within the top section */
+      .buttons {
+        display: flex; /* Horizontal layout for buttons */
+        gap: 10px; /* Space between buttons */
+  
+        button {
+          background-color: white; /* White button background */
+          border: none; /* No border */
+          outline: none; /* No outline */
+          width: 30px; /* Button width */
+          height: 30px; /* Button height */
+          border-radius: 50%; /* Makes button circular */
+        }
+  
+        /* Styles for the active button */
+        .active {
+          background-color: black; /* Black background for active button */
+          color: white; /* White text on active button */
+          box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5); /* Adds shadow effect */
+        }
+      }
+    }
+  }
+  
+  /* Highlights section styling */
+  .hight_lights {
+    h3 {
+      font-weight: 400; /* Normal weight for heading */
+      font-size: 16px; /* Font size for heading */
+    }
+    position: relative; /* Positions relative to its normal position */
+    overflow: auto; /* Enables scrolling if content overflows */
+    height: 100%; /* Takes full height of its container */
+  }
+  
+  /* Container for cards */
+  .cards {
+    display: flex; /* Flex layout for cards */
+    column-gap: 20px; /* Space between columns */
+    flex-wrap: wrap; /* Wraps items to the next line */
+    justify-content: flex-start; /* Aligns cards to the start */
+    margin: auto;
+    padding: 4px;
+  }
+  
+  /* Individual card styling */
+  .card {
+    box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.5);
+    flex: 1 0 200px; /* Flex-grow: 1, flex-shrink: 0, flex-basis: 200px */
+    background-color: white; /* White background for cards */
+    padding: 24px; /* Padding inside each card */
+    margin-top: 25px; /* Space above each card */
+    border-radius: 15px; /* Rounds corners of each card */
+    display: flex; /* Flex layout for items within the card */
+    flex-direction: column; /* Stacks items vertically */
+    gap: 20px; /* Space between items */
+    min-height: 150px; /* Minimum height for each card */
+  
+    h6 {
+      opacity: 0.6; /* Slightly transparent text */
+      font-weight: 300; /* Light font weight */
+      font-size: 14px; /* Font size for heading */
+    }
+    
+    div {
+      /* Span styling within divs inside cards */
+      span {
+        font-size: 35px; /* Large font size */
+        font-weight: 500; /* Semi-bold font weight */
+        
+        /* Smaller font size and lighter weight for elements with 'small' class */
+        &.small {
+          font-size: 16px;
+          font-weight: 300;
+        }
+      }
+    }
+  
+    /* Status text within each card */
+    .status {
+      font-weight: 600; /* Bold font weight */
+      font-size: 14px; /* Font size */
+    }
+  
+    /* First 'sun_condition' styling inside card */
+    & .sun_condition:first-child {
+      margin-bottom: 10px; /* Space below the first sun condition */
+    }
+  }
+  
+  /* Sun condition styling */
+  .sun_condition {
+    align-items: center; /* Centers items vertically */
+    display: flex; /* Flex layout */
+  
+    /* Icon styling within sun condition */
+    .icon {
+      display: flex;
+      align-items: center; /* Centers icon vertically */
+    }
+  
+    /* Last child styling */
+    &:last-child {
+      display: flex;
+      align-items: center; /* Centers last sun condition vertically */
+    }
+  
+    /* Sun time text styling */
+    .sun_time {
+      font-size: 16px; /* Font size for sun time */
+      margin-left: 10px; /* Adds space to the left */
+    }
+  }
+  
+  /* Custom scrollbar styling for highlights section */
+  .hight_lights {
+    -ms-overflow-style: none;  /* Disables scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hides scrollbar for Firefox */
+  }
+  
+  /* Responsive card styling for wider screens */
+  @media (min-width:846px) {
+    .card {
+      max-width: 250px; /* Sets a maximum width for each card */
+    }
+  }
+  
+
+  @media (max-width:1083px){
+    .cards{
+      justify-content: center;
+    }
+  }

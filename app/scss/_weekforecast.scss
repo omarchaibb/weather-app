@@ -1,0 +1,36 @@
+
+
+#week_forecast{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    .day_forecast{
+        width: 85px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px;
+        padding-block: 6px;
+        padding-inline: 10px;
+        gap: 5px;
+        font-size: 14px;
+        flex: 1 0 85px;
+
+        & >  span {
+            text-wrap: nowrap;
+        }
+        img{
+            width: 35px;
+        }
+
+        .min_max{
+            
+            .min{
+                opacity: .4;
+                font-size: 13px;
+            }
+        }
+    }
+}
