@@ -266,4 +266,14 @@ const renderWeedForecast = (data) => {
       `;
     })
     .join("");
+    const forecastItems = document.querySelectorAll('.day_forecast');
+    gsap.from(forecastItems, {
+      duration: 0.5,
+      opacity: 0,
+      y: 20,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
 };
+
+
