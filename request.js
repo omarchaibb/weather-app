@@ -1,3 +1,4 @@
+
 const baseUrl = "https://api.open-meteo.com/v1/forecast?";
 const WEATHER_API_KEY = "e0e73a11abd34d17a62232425240411";
 const PHOTO_API_KEY =
@@ -270,6 +271,7 @@ const renderWeedForecast = (data) => {
     gsap.from(forecastItems, {
       duration: 0.5,
       opacity: 0,
+      delay:1,
       y: 20,
       stagger: 0.2,
       ease: "power3.out"
