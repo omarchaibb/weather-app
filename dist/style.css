@@ -15,10 +15,6 @@ a {
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f6f6f8;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 button,
@@ -28,6 +24,7 @@ select {
 }
 
 .container {
+  margin: auto;
   box-sizing: border-box;
   background-color: #f6f6f8;
   border-radius: 20px;
@@ -76,16 +73,12 @@ select {
 }
 
 div#img {
-  width: 70%;
   height: 60px;
   margin: auto;
   text-align: center;
 }
 
-#weather_image {
-  -o-object-fit: contain;
-  object-fit: contain;
-}
+
 
 #temp {
   font-size: 60px;
@@ -457,3 +450,37 @@ div#img {
   opacity: 0.4;
   font-size: 13px;
 }
+
+
+
+@media (min-width:769px) {
+  .container{
+    margin-top: 20px;
+    max-width: 1100px;
+    max-height: 100vh;
+  }
+}
+
+@media (max-width:768px) {
+  .container{
+    flex-direction: column;
+    margin-block: 20px;
+  }
+
+  .left_side{
+    width: 100%;
+    border-radius: 20px 20px 0 0 ;
+  }
+
+  #temp {
+    flex: 1;
+  }
+  .image_and_name_of_city{
+    width: 80%;
+    margin: auto;
+    height: 120px;
+    margin-top: 30px;
+  }
+
+}
+
