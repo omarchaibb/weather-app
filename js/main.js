@@ -215,16 +215,6 @@ const renderCentent = (data) => {
     stagger: 0.2,
   })
 
-  document.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("mouseenter", () => {
-      button.style.scale = 1.1;
-      button.style.duration = 0.2;
-    });
-    button.addEventListener("mouseleave", () => {
-      button.style.scale = 1;
-      button.style.duration = 0.2;
-  })});
-
   gsap.from(".left_side", {
     duration: 1,
     x: -300,

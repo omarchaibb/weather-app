@@ -13,15 +13,6 @@ gsap.from(".container", {
     stagger: 0.2,
   });
 
-  document.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("mouseenter", () => {
-      gsap.to(button, { scale: 1.1, duration: 0.2 });
-    });
-    button.addEventListener("mouseleave", () => {
-      gsap.to(button, { scale: 1, duration: 0.2 });
-    });
-  });
-
   gsap.from(".left_side", {
     duration: 1,
     x: -300,

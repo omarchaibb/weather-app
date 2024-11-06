@@ -84,7 +84,7 @@ div#img {
 
 #weather_image {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 #temp {
@@ -151,9 +151,9 @@ div#img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: top;
-     object-position: top;
+  object-position: top;
   border-radius: 20px;
 }
 .image_and_name_of_city .image_city::after {
@@ -192,16 +192,16 @@ div#img {
 .right_side::-webkit-scrollbar-track {
   border-radius: 10px;
 }
- 
+
 /* Handle */
 .right_side::-webkit-scrollbar-thumb {
-  background: rgb(199, 198, 198); 
+  background: rgb(199, 198, 198);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .right_side::-webkit-scrollbar-thumb:hover {
-  background: rgb(175, 175, 175); 
+  background: rgb(175, 175, 175);
 }
 
 .right_side .top {
@@ -251,7 +251,6 @@ div#img {
   height: fit-content;
 }
 
-
 .hight_lights h3 {
   font-weight: 400; /* Normal weight for heading */
   font-size: 16px; /* Font size for heading */
@@ -261,7 +260,7 @@ div#img {
 .cards {
   display: flex; /* Flex layout for cards */
   -moz-column-gap: 20px;
-       column-gap: 20px; /* Space between columns */
+  column-gap: 20px; /* Space between columns */
   flex-wrap: wrap; /* Wraps items to the next line */
   justify-content: flex-start; /* Aligns cards to the start */
   margin: auto;
@@ -270,7 +269,7 @@ div#img {
 
 /* Individual card styling */
 .card {
-  box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px -5px rgba(0, 0, 0, 0.5);
   flex: 1 0 200px; /* Flex-grow: 1, flex-shrink: 0, flex-basis: 200px */
   background-color: white; /* White background for cards */
   padding: 24px; /* Padding inside each card */
@@ -449,7 +448,12 @@ div#img {
 #week_forecast .day_forecast img {
   width: 35px;
 }
-#week_forecast .day_forecast .min_max .min {
+
+#week_forecast .day_forecast .min_max span{
+  display: block;
+}
+
+#week_forecast .day_forecast .min_max .min {        
   opacity: 0.4;
   font-size: 13px;
 }
