@@ -14,7 +14,7 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #d6d7da;
+  background-color: #f6f6f8;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -32,10 +32,10 @@ select {
   background-color: #f6f6f8;
   border-radius: 20px;
   height: 90%;
-  width: 70%;
+  width: 80%;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 0px 47px -33px;
+  box-shadow: inset 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -178,10 +178,32 @@ div#img {
 
 /* Styles for the right-side container */
 .right_side {
+  overflow: auto;
   padding: 20px; /* Adds padding around the right-side content */
   flex: 1; /* Allows this container to grow and take available space */
   /* Styles for the top section within the right side */
 }
+
+.right_side::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+.right_side::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.right_side::-webkit-scrollbar-thumb {
+  background: rgb(199, 198, 198); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.right_side::-webkit-scrollbar-thumb:hover {
+  background: rgb(175, 175, 175); 
+}
+
 .right_side .top {
   display: flex; /* Enables horizontal layout */
   justify-content: space-between; /* Space between elements */
@@ -225,10 +247,11 @@ div#img {
 
 /* Highlights section styling */
 .hight_lights {
-  position: relative; /* Positions relative to its normal position */
-  overflow: auto; /* Enables scrolling if content overflows */
   height: 100%; /* Takes full height of its container */
+  height: fit-content;
 }
+
+
 .hight_lights h3 {
   font-weight: 400; /* Normal weight for heading */
   font-size: 16px; /* Font size for heading */
@@ -408,7 +431,6 @@ div#img {
   margin-bottom: 20px;
 }
 #week_forecast .day_forecast {
-  box-shadow: 1px 10px 20px -23px;
   width: 85px;
   display: flex;
   flex-direction: column;

@@ -200,20 +200,30 @@ const renderCentent = (data) => {
   gsap.from(".card", {
     duration: 1,
     opacity: 0,
-    delay:2,
+    delay:2.4,
     y: 20,
     ease: "power3.out",
     stagger: 0.2,
   });
 
+  gsap.from(".hight_lights h3",{
+    duration: 1,
+    opacity: 0,
+    delay:2,
+    y: 20,
+    ease: "power3.out",
+    stagger: 0.2,
+  })
+
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("mouseenter", () => {
-      gsap.to(button, { scale: 1.1, duration: 0.2 });
+      button.style.scale = 1.1;
+      button.style.duration = 0.2;
     });
     button.addEventListener("mouseleave", () => {
-      gsap.to(button, { scale: 1, duration: 0.2 });
-    });
-  });
+      button.style.scale = 1;
+      button.style.duration = 0.2;
+  })});
 
   gsap.from(".left_side", {
     duration: 1,
