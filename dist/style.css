@@ -35,7 +35,7 @@ select {
   width: 80%;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 4px 35px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -66,6 +66,7 @@ select {
   border-radius: 20px 0 0 20px;
   max-height: 100%;
 }
+
 .left_side .weather_info {
   display: flex;
   flex-direction: column;
@@ -82,8 +83,6 @@ div#img {
   margin: auto;
   text-align: center;
 }
-
-
 
 #temp {
   font-size: 60px;
@@ -117,20 +116,25 @@ div#img {
   align-items: center;
   justify-content: start;
 }
+
 .condition > div img {
   width: 40px;
   margin-right: 10px;
 }
+
 .condition > div #condition {
   opacity: 0.6;
 }
+
 .condition > div:last-child div {
   width: 40px;
   margin-right: 10px;
 }
+
 .condition > div:last-child div img {
   padding: 7px;
 }
+
 .condition > div:last-child #rain_mm {
   font-size: 14px;
   opacity: 0.6;
@@ -177,172 +181,164 @@ div#img {
 /* Styles for the right-side container */
 .right_side {
   overflow: auto;
-  padding: 20px; /* Adds padding around the right-side content */
-  flex: 1; /* Allows this container to grow and take available space */
-  /* Styles for the top section within the right side */
+  padding: 20px;
+  flex: 1;
 }
 
 .right_side::-webkit-scrollbar {
   width: 4px;
 }
 
-/* Track */
 .right_side::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
-/* Handle */
 .right_side::-webkit-scrollbar-thumb {
   background: rgb(199, 198, 198);
   border-radius: 10px;
 }
 
-/* Handle on hover */
 .right_side::-webkit-scrollbar-thumb:hover {
   background: rgb(175, 175, 175);
 }
 
 .right_side .top {
-  display: flex; /* Enables horizontal layout */
-  justify-content: space-between; /* Space between elements */
-  margin-bottom: 30px; /* Adds space below this section */
-  /* Styles for the 'today or week' selection within the top section */
-  /* Styles for the button group within the top section */
-}
-.right_side .top .today_or_week {
-  display: flex; /* Horizontal layout for 'today' and 'week' options */
-  gap: 15px; /* Space between items */
-  /* Styles for the active selection */
-}
-.right_side .top .today_or_week span {
-  opacity: 0.5; /* Slightly transparent text */
-  font-weight: 400; /* Normal font weight */
-  font-size: 14px; /* Font size for text */
-}
-.right_side .top .today_or_week .active {
-  font-weight: 500; /* Slightly bolder font */
-  opacity: 1; /* Full opacity */
-  border-bottom: 1px solid black !important; /* Bottom border for active item */
-}
-.right_side .top .buttons {
-  display: flex; /* Horizontal layout for buttons */
-  gap: 10px; /* Space between buttons */
-  /* Styles for the active button */
-}
-.right_side .top .buttons button {
-  background-color: white; /* White button background */
-  border: none; /* No border */
-  outline: none; /* No outline */
-  width: 30px; /* Button width */
-  height: 30px; /* Button height */
-  border-radius: 50%; /* Makes button circular */
-}
-.right_side .top .buttons .active {
-  background-color: black; /* Black background for active button */
-  color: white; /* White text on active button */
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5); /* Adds shadow effect */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-/* Highlights section styling */
+.right_side .top .today_or_week {
+  display: flex;
+  gap: 15px;
+}
+
+.right_side .top .today_or_week span {
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.right_side .top .today_or_week .active {
+  font-weight: 500;
+  opacity: 1;
+  border-bottom: 1px solid black !important;
+}
+
+.right_side .top .buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.right_side .top .buttons button {
+  background-color: white;
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.right_side .top .buttons .active {
+  background-color: black;
+  color: white;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
 .hight_lights {
-  height: 100%; /* Takes full height of its container */
+  height: 100%;
   height: fit-content;
 }
 
 .hight_lights h3 {
-  font-weight: 400; /* Normal weight for heading */
-  font-size: 16px; /* Font size for heading */
+  font-weight: 400;
+  font-size: 16px;
 }
 
-/* Container for cards */
 .cards {
-  display: flex; /* Flex layout for cards */
+  display: flex;
   -moz-column-gap: 20px;
-  column-gap: 20px; /* Space between columns */
-  flex-wrap: wrap; /* Wraps items to the next line */
-  justify-content: flex-start; /* Aligns cards to the start */
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   margin: auto;
   padding: 4px;
 }
 
-/* Individual card styling */
 .card {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
-  flex: 1 0 200px; /* Flex-grow: 1, flex-shrink: 0, flex-basis: 200px */
+  flex: 1 0 200px;
   background-color: rgba(255, 255, 255, 0.601);
-  padding: 24px; /* Padding inside each card */
-  margin-top: 25px; /* Space above each card */
-  border-radius: 15px; /* Rounds corners of each card */
-  display: flex; /* Flex layout for items within the card */
-  flex-direction: column; /* Stacks items vertically */
-  gap: 20px; /* Space between items */
-  min-height: 150px; /* Minimum height for each card */
-  /* Status text within each card */
-  /* First 'sun_condition' styling inside card */
+  padding: 24px;
+  margin-top: 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 150px;
 }
+
 .card h6 {
-  opacity: 0.6; /* Slightly transparent text */
-  font-weight: 300; /* Light font weight */
-  font-size: 14px; /* Font size for heading */
+  opacity: 0.6;
+  font-weight: 300;
+  font-size: 14px;
 }
-.card div {
-  /* Span styling within divs inside cards */
-}
+
 .card div span {
-  font-size: 35px; /* Large font size */
-  font-weight: 500; /* Semi-bold font weight */
-  /* Smaller font size and lighter weight for elements with 'small' class */
+  font-size: 35px;
+  font-weight: 500;
 }
+
 .card div span.small {
   font-size: 16px;
   font-weight: 300;
 }
+
 .card .status {
-  font-weight: 600; /* Bold font weight */
-  font-size: 14px; /* Font size */
+  font-weight: 600;
+  font-size: 14px;
 }
 .card .sun_condition:first-child {
-  margin-bottom: 10px; /* Space below the first sun condition */
+  margin-bottom: 10px;
 }
 
-/* Sun condition styling */
 .sun_condition {
-  align-items: center; /* Centers items vertically */
-  display: flex; /* Flex layout */
-  /* Icon styling within sun condition */
-  /* Last child styling */
-  /* Sun time text styling */
+  align-items: center;
+  display: flex;
 }
+
 .sun_condition .icon {
   display: flex;
-  align-items: center; /* Centers icon vertically */
+  align-items: center;
 }
+
 .sun_condition:last-child {
   display: flex;
-  align-items: center; /* Centers last sun condition vertically */
+  align-items: center;
 }
+
 .sun_condition .sun_time {
-  font-size: 16px; /* Font size for sun time */
-  margin-left: 10px; /* Adds space to the left */
+  font-size: 16px;
+  margin-left: 10px;
 }
 
-/* Custom scrollbar styling for highlights section */
 .hight_lights {
-  -ms-overflow-style: none; /* Disables scrollbar for IE and Edge */
-  scrollbar-width: none; /* Hides scrollbar for Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Responsive card styling for wider screens */
 @media (min-width: 846px) {
   .card {
-    max-width: 250px; /* Sets a maximum width for each card */
+    max-width: 250px;
   }
 }
+
 @media (max-width: 1083px) {
   .cards {
     justify-content: center;
   }
 }
+
 .skeleton_container {
   box-sizing: border-box;
   background-color: #f6f6f8;
@@ -371,6 +367,7 @@ div#img {
     background-position: 200% 0;
   }
 }
+
 .skeleton-select {
   width: 100%;
   height: 35px;
@@ -427,6 +424,7 @@ div#img {
   gap: 20px;
   margin-bottom: 20px;
 }
+
 #week_forecast .day_forecast {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   width: 85px;
@@ -444,52 +442,51 @@ div#img {
 #week_forecast .day_forecast > span {
   text-wrap: nowrap;
 }
+
 #week_forecast .day_forecast img {
   width: 35px;
 }
 
-#week_forecast .day_forecast .min_max span{
+#week_forecast .day_forecast .min_max span {
   display: block;
 }
 
-#week_forecast .day_forecast .min_max .min {        
+#week_forecast .day_forecast .min_max .min {
   opacity: 0.4;
   font-size: 13px;
 }
 
-
-
-@media (min-width:769px) {
-  .container{
+@media (min-width: 769px) {
+  .container {
     max-width: 1100px;
     max-height: 100vh;
   }
 }
 
-@media (max-width:768px) {
-  body{
+@media (max-width: 768px) {
+  body {
     display: block;
     height: auto;
   }
-  .container{
+
+  .container {
     flex-direction: column;
     margin-block: 20px;
   }
 
-  .left_side{
+  .left_side {
     width: 100%;
-    border-radius: 20px 20px 0 0 ;
+    border-radius: 20px 20px 0 0;
   }
 
   #temp {
     flex: 1;
   }
-  .image_and_name_of_city{
+
+  .image_and_name_of_city {
     width: 80%;
     margin: auto;
     height: 120px;
     margin-top: 30px;
   }
-
 }
-
