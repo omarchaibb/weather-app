@@ -470,6 +470,11 @@ div#img {
   .container {
     flex-direction: column;
     margin-block: 20px;
+    width: 100%;
+
+
+
+    
   }
 
   .left_side {
