@@ -1,6 +1,6 @@
 gsap.from(".container", {
     duration: 1,
-    opacity: 0,
+    opacity: 1,
     scale: 0.8,
     ease: "power3.out",
   });
@@ -15,8 +15,8 @@ gsap.from(".container", {
 
   gsap.from(".left_side", {
     duration: 1,
-    x: -300,
-    opacity: 0,
+    x: 0,
+    opacity: 1,
     ease: "power3.out",
   });
 

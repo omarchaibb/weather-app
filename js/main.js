@@ -1,4 +1,3 @@
-
 const baseUrl = "https://api.open-meteo.com/v1/forecast?";
 const WEATHER_API_KEY = "e0e73a11abd34d17a62232425240411";
 const PHOTO_API_KEY =
@@ -62,6 +61,7 @@ const getWeather = async (latitude, longitude) => {
   }
 };
 
+
 const getPhoto = async (city) => {
   try {
     const response = await fetch(`${PHOTO_API}${city}&per_page=1`, {
@@ -86,6 +86,8 @@ const renderPhoto = (data) => {
       "<img src='https://preview.redd.it/x-plane-12-default-weather-engine-keeps-improving-live-v0-dtwaydo0tdka1.png?width=640&crop=smart&auto=webp&s=aeded245f5690c21138c0249d54b51177844c323' />";
   }
 };
+
+
 
 const renderCentent = (data) => {
   const { current, location, forecast } = data;
@@ -200,20 +202,20 @@ const renderCentent = (data) => {
   gsap.from(".card", {
     duration: 1,
     opacity: 0,
-    delay:2.4,
+    delay: 2.4,
     y: 20,
     ease: "power3.out",
     stagger: 0.2,
   });
 
-  gsap.from(".hight_lights h3",{
+  gsap.from(".hight_lights h3", {
     duration: 1,
     opacity: 0,
-    delay:2,
+    delay: 2,
     y: 20,
     ease: "power3.out",
     stagger: 0.2,
-  })
+  });
 
   gsap.from(".left_side", {
     duration: 1,
@@ -252,8 +254,8 @@ const renderWeedForecast = (data) => {
     .map((day) => {
       const { icon } = day.day.condition;
       const { maxtemp_c, maxtemp_f, mintemp_c, mintemp_f } = day.day;
-      date = new Date(day.date)
-      day_name = date.toLocaleDateString("en-US" , {weekday:"long"})
+      date = new Date(day.date);
+      day_name = date.toLocaleDateString("en-US", { weekday: "long" });
       return `
       <div class="day_forecast">
             <span>${day_name}</span>
@@ -268,15 +270,28 @@ const renderWeedForecast = (data) => {
       `;
     })
     .join("");
-    const forecastItems = document.querySelectorAll('.day_forecast');
-    gsap.from(forecastItems, {
-      duration: 0.5,
-      opacity: 0,
-      delay:1,
-      y: 20,
-      stagger: 0.2,
-      ease: "power3.out"
-    });
+  const forecastItems = document.querySelectorAll(".day_forecast");
+  gsap.from(forecastItems, {
+    duration: 0.5,
+    opacity: 0,
+    delay: 1,
+    y: 20,
+    stagger: 0.2,
+    ease: "power3.out",
+  });
 };
 
-
+navigator.geolocation.getCurrentPosition(
+  (pos) => {
+    const { latitude, longitude } = pos.coords;
+    getWeather(latitude, longitude);
+  },
+  (error) => {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  },
+  {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  }
+);

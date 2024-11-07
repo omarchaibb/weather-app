@@ -14,7 +14,10 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f6f6f8;
+  background-color: #e8e8e8;
+  display: flex;
+  place-content: center;
+  height: 100vh;
 }
 
 button,
@@ -26,13 +29,13 @@ select {
 .container {
   margin: auto;
   box-sizing: border-box;
-  background-color: #f6f6f8;
+  background-color: inherit;
   border-radius: 20px;
   height: 90%;
   width: 80%;
   display: flex;
   overflow: hidden;
-  box-shadow: inset 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 35px rgba(0, 0, 0, .1);
   position: relative;
 }
 
@@ -47,14 +50,16 @@ button {
 select {
   padding: 10px;
   border: none;
-  background-color: white;
+  /* background-color: white; */
+  background-color: #f6f6f6;
+
   width: 100%;
   outline: none;
 }
 
 .left_side {
   width: 300px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.89);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -262,9 +267,9 @@ div#img {
 
 /* Individual card styling */
 .card {
-  box-shadow: 0px 0px 5px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
   flex: 1 0 200px; /* Flex-grow: 1, flex-shrink: 0, flex-basis: 200px */
-  background-color: white; /* White background for cards */
+  background-color: rgba(255, 255, 255, 0.601);
   padding: 24px; /* Padding inside each card */
   margin-top: 25px; /* Space above each card */
   border-radius: 15px; /* Rounds corners of each card */
@@ -423,11 +428,12 @@ div#img {
   margin-bottom: 20px;
 }
 #week_forecast .day_forecast {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   width: 85px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.601);
   border-radius: 10px;
   padding-block: 6px;
   padding-inline: 10px;
@@ -455,13 +461,16 @@ div#img {
 
 @media (min-width:769px) {
   .container{
-    margin-top: 20px;
     max-width: 1100px;
     max-height: 100vh;
   }
 }
 
 @media (max-width:768px) {
+  body{
+    display: block;
+    height: auto;
+  }
   .container{
     flex-direction: column;
     margin-block: 20px;
