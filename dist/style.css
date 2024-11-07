@@ -50,16 +50,14 @@ button {
 select {
   padding: 10px;
   border: none;
-  /* background-color: white; */
-  background-color: #f6f6f6;
-
+  background-color: #f8f8f8;
   width: 100%;
   outline: none;
 }
 
 .left_side {
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: rgba(255, 255, 255, 0.68);
   padding: 20px;
   display: flex;
   flex-direction: column;
